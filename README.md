@@ -16,7 +16,7 @@
 
 ## Installation
 
-* Clone the repository (git clone https://github.com/Gytzum/PHP-FileBrowser)
+* Clone the repository (git clone https://github.com/Gytzum/PHP-FileBrowser) or Clone it to AMPPS or XAMPPS root folder and start through http://localhost/
 * Open the path where you can launch php interpreter, e.g. http//localhost/browser
 * Login with provided information in the form placeholders
 
