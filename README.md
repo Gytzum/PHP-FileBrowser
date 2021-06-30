@@ -20,5 +20,6 @@
 * Open the path where you can launch php interpreter, e.g. http//localhost/browser
 * Login with provided information in the form placeholders
 
+* Site published on : https://gytzum.github.io/PHP-FileBrowser/
 ## Author
 Gytautas [Github](https://github.com/Gytzum) , [LinkedIn](https://www.linkedin.com/in/gytautas-zumaras-4ab552210/)
