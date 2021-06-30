@@ -23,6 +23,7 @@ if ($_SESSION['logged_in'] != 'true') {
 </head>
 
 <body>
+   
     <div class="container " style="margin: auto; text-align:center">
         <h2 class="header">Files Browser</h2>
         <table class="table table-dark">
@@ -36,10 +37,10 @@ if ($_SESSION['logged_in'] != 'true') {
             <tbody>
                 <?php
 
-                $path = './' . $_GET['path'];
+                $path = './' . $_GET['path'] ;
                 $dirContent = scandir($path);
 
-                foreach ($dirContent as $contentPiece) {
+                    foreach ($dirContent as $contentPiece) {
                     if (substr_count($path, "./") > 1) {
                         $path = $_GET['path'] . '/';
                     }
@@ -81,8 +82,15 @@ if ($_SESSION['logged_in'] != 'true') {
         echo 'File deleted!';
         header("Refresh:0");
     }
-    ?>
-    <!-- BUTTON LOGIC  -->
+
+    // BUTTON BACK
+    $back = dirname($path, 1);
+    if ($back == ".")  $back = ltrim(strpbrk($input , "." ),'. ');
+    
+    print '<button><a class="backBtn" href="?path='.$back.'">Back</a></button>';
+   
+?>
+
     <!-- UPLOAD FILES HTML-->
     <div class="uploadForm">
         <form action="" method="POST" enctype="multipart/form-data">
@@ -93,7 +101,6 @@ if ($_SESSION['logged_in'] != 'true') {
             <button <input style="width: 49%" type="submit" />Upload file</button>
         </form>
     </div>
-
 
     <!-- UPLOAD FILES LOGIC -->
     <?php
@@ -138,6 +145,7 @@ if ($_SESSION['logged_in'] != 'true') {
         header('Pragma: public');
         header('Content-Length: ' . filesize($fileToDownloadEscaped));
         ob_end_flush();
+        
         readfile($fileToDownloadEscaped);
         exit;
     }

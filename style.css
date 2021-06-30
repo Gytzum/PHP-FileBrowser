@@ -43,3 +43,13 @@ button{
 button:hover{
     transform: translateY(-5px);
 }
+.backBtn {
+    color: white;
+    display: inline-block;
+    padding: 5px 20px;
+}
+
+.backBtn:hover{
+    text-decoration: none;
+    color: #fff;
+}
