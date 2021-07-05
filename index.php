@@ -132,7 +132,7 @@ if ($_SESSION['logged_in'] != 'true') {
 
     <!-- DOWNLOAD FILES LOGIC    TODO FIX--> 
     <?php if (isset($_POST['download'])) {
-        $file = $_GET['path'];
+        $file = './' . $_GET["path"] . $_POST['download'];
         $fileToDownloadEscaped = str_replace("&nbsp;", " ", htmlentities($file, null, 'utf-8'));
         ob_clean();
         ob_start();
